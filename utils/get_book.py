@@ -3,9 +3,6 @@
 # import librairies
 from urllib.parse import urljoin
 
-# import utils
-from utils.get_data import get_data
-
 # import models
 from models.book import Book
 
@@ -25,7 +22,7 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the upc of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_title(self):
         """return title"""
@@ -35,7 +32,7 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the title of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_price_including_tax(self):
         """return price_including_tax"""
@@ -46,7 +43,7 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the price including tax of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_price_excluding_tax(self):
         """return price_excluding_tax"""
@@ -57,7 +54,7 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the price excluding tax of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_number_available(self):
         """return number_available"""
@@ -70,7 +67,7 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the number available of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_product_description(self):
         """return product_description"""
@@ -80,7 +77,7 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the description of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_category(self):
         """return category"""
@@ -91,7 +88,7 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the category of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_reviews_rating(self):
         """return reviews rating"""
@@ -102,7 +99,7 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the reviews rating of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_image_url(self):
         """return image_url"""
@@ -113,7 +110,7 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the image url of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_filename(self):
         """return filename"""
@@ -124,10 +121,11 @@ class BookFetcher:
         except Exception as err:
             print("OOps: the filename of the book", self.get_title(), "of the category",
                   self.get_category(), "does not exist.", "ERROR:", err)
-            return
+            return None
 
     def get_book_info(self):
-        """return book_info"""
+        """return instence of class Book"""
+        # instence class Book
         book_info = Book(
             self.url,
             self.get_upc(),

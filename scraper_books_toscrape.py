@@ -97,6 +97,7 @@ def get_all_book(url_book: list, rows: list):
     # loop from book url
     for url in url_book:
         soup = get_data(url)
+        # instence class BookFetcher
         book_info = BookFetcher(url, soup)
         book = book_info.get_book_info()
         # write each result to rows
