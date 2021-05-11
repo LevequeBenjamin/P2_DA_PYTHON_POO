@@ -1,4 +1,8 @@
-class Book:
+""" contains class Book """
+
+class Book: # pylint: disable=too-few-public-methods 
+    """[class Book]
+    """
     def __init__(self,
                  product_page_url,
                  upc,
@@ -20,7 +24,6 @@ class Book:
         self.number_available = number_available
         self.product_description = product_description
         self.category = category
-        self.reviews_rating = reviews
+        self.reviews_rating = reviews_rating
         self.image_url = image_url
         self.filename = filename
-

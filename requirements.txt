@@ -3,5 +3,5 @@ requests==2.25.1
 csv23==0.3.2
 tqdm==4.60.0
 pylint==2.8.2
-python-slugify==5.0.2
+
 

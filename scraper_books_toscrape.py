@@ -13,11 +13,12 @@ from tqdm.auto import tqdm
 
 
 # import modules_p2
-from utils.get_book import Book
+from utils.get_book import BookFetcher
 from utils.get_url_category import get_url_category
 from utils.get_url_book import get_url_book
 from utils.save_csv_book import save_csv_book
 from utils.get_data import get_data
+from utils.save_book_image import save_book_image
 
 
 # specify the url
@@ -95,10 +96,11 @@ def get_all_book(url_book: list, rows: list):
     """
     # loop from book url
     for url in url_book:
-        book = Book()
-        book_info = book.get_book_info(url)
+        soup = get_data(url)
+        book_info = BookFetcher(url, soup)
+        book = book_info.get_book_info()
         # write each result to rows
-        rows.append(book_info)
+        rows.append(book)
 
 
 # get book url
@@ -147,6 +149,7 @@ def main(url):
         srap_books(url[i], rows)
         # create csv and write rows list
         save_csv_book(rows)
+        save_book_image(rows)
         # progress bar
         sleep(0.01)
         # cancel list
