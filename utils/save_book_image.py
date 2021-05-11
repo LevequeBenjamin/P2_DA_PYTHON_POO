@@ -12,8 +12,7 @@ def save_book_image(books):
     """
     dir_path = f'data/{books[0].category.replace(" ", "_").lower()}/images'
     if not os.path.exists(dir_path):
-        os.makedirs(
-            f'data/{books[0].category.replace(" ", "_").lower()}/images')
+        os.makedirs(dir_path, exist_ok=True)
     for book in books:
         filename = book.filename
         file_path = os.path.join(dir_path, filename)
