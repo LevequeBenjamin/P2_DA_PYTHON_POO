@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 # Create csv and write rows to output file
-def save_csv_book(books):
+def save_csv_book(books: list):
     """[Create a csv file, and write all the data found from each book]
 
     Args:
@@ -23,7 +23,7 @@ def save_csv_book(books):
         image_url,
         filename]
     """
-    #extract category from the name
+    # extract category from the name
     dir_path = f'data/{books[0].category.replace(" ", "_").lower()}'
     filename = f'{books[0].category.replace(" ", "_").lower()}.csv'
     if not os.path.isdir(dir_path):

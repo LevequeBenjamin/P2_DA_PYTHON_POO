@@ -8,12 +8,12 @@
 """
 # import librairies
 from time import sleep
-from bs4 import BeautifulSoup
 from tqdm.auto import tqdm
+from bs4 import BeautifulSoup
 
 
 # import modules_p2
-from utils.get_book import BookFetcher
+from utils.book_fetcher import BookFetcher
 from utils.get_url_category import get_url_category
 from utils.get_url_book import get_url_book
 from utils.save_csv_book import save_csv_book
@@ -99,7 +99,7 @@ def get_all_book(url_book: list, rows: list):
         soup = get_data(url)
         # instence class BookFetcher
         book_info = BookFetcher(url, soup)
-        book = book_info.get_book_info()
+        book = book_info.get_book_info
         # write each result to rows
         rows.append(book)
 
