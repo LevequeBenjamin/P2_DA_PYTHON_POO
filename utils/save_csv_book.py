@@ -58,5 +58,5 @@ def save_csv_book(books):
                 book.category,
                 book.reviews_rating,
                 book.image_url,
-                filename
+                book.filename
             ])
